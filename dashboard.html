@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        display: flex;
+      }
+      .sidebar {
+        width: 200px;
+        height: 100vh;
+        background-color: #0e549b;
+        color: white;
+        padding: 15px;
+      }
+      .content {
+        padding: 0px;
+        width: 100%;
+      }
+      .topnav {
+        background-color: #343a40;
+        color: white;
+        padding: 10px;
+        width: 100vw;
+      }
+
+      .active {
+        background-color: #1aeb60;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <h4>Sidebar</h4>
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">Settings</a>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="content">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#" id="Home">DASHBOARD</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"
+                  >Profile</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Settings</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container mt-4" id="main">
+        <h1>Welcome to the Dashboard</h1>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('.nav-link').click(function(event) {
+          event.preventDefault();
+          var text = $(this).text();
+          $('#main').html('<h1>' + text + '</h1><p>You clicked on ' + text + '.</p>');
+          $('.nav-link').removeClass('active');
+          $(this).addClass('active');
+        });
+
+        $('#Home').click(function(event) {
+          event.preventDefault();
+          $('#main').html('<h1>Welcome to the Dashboard</h1>');
+        });
+      });
+    </script>
+  </body>
+</html>
